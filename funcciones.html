@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funcciones</title>
+    <script>
+        //la primera funccion
+        function saludar() {
+            alert("Hola Mundo");
+        }
+
+        //saludar
+       let persona = "Paco";
+
+        function saludarPersonas(persona) {
+            alert("Hola " + persona);
+        }
+
+        //saludarPersonas(persona);
+        //saludarPersonas("Alejandro");
+
+        function saludarPersona2() {
+            alert("Hola " + persona);
+            let persona2 = "Pepe";
+            alert("Hola " + persona2);
+        }
+        //saludarPersona2();
+        //alert("Esto esta fuera de la fuccion y muestra " + persona);
+        //alert("Esto esta fuera de la fuccion y muestra " + persona2); //este alert no funciona porque esta dentro de una funcion
+        
+
+        function showMensaje(de, mensaje = "Este es el mensaje"){
+            alert(de + " : " + mensaje);
+        }
+
+        //showMensaje("Veselin",  "Las funcciones");
+        //showMensaje("Veselin");
+
+        function suma(a, b) {
+            return (a+b); //return sirve para devolver algo
+        }
+        //console.log("La suma de 5 + 3 es igual a " + suma(5, 3));
+
+        //asignarle a una variable una funccion
+
+        function holaMundo() {
+            alert("Hola Mundo");
+        }
+
+        let holaMundoFunccion = function() {
+            alert("Hola Mundo");
+        };
+
+        //holaMundo();
+        //alert(holaMundoFunccion);
+        //holaMundoFunccion();
+
+        //colback segun la respuesta te devuelve una opcion u otra
+        function preguntar(pregunta, muestraok, muestrako) {
+            if(confirm(pregunta)) {
+                muestraok();
+            }else{
+                muestrako();
+            }
+        }
+
+    
+
+        function muestraok() {
+            alert("Haz confirmado ");
+        }
+
+        function muestrako() {
+           alert("Haz rechazado ");
+        }
+
+        //preguntar("Estas de acuerdo conmigo ", muestraok, muestrako);
+
+
+        //Funccion flecha
+
+        let max = (a, b) => (a > b ? a : b);
+        
+        //Ejercicio
+
+        function mediaPiramide(){
+
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Funcciones</h1>
+        <p>Un trozo de codigo que hace una funccion. Get, Set, ...</p>
+        <p>Alert, prompt y confirm son funciones a las que puedes pasar distintos parametros</p>
+    </header>
+    
+</body>
+</html>

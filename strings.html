@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strings</title>
+    <script>
+        "use strict";
+
+//METODOS 
+
+
+let miCadena = "Texto lo más largo que se pueda sin excedernos mucho."
+
+document.write(miCadena);
+
+//length : cuenta los numeros de caracteres de un string. Es una propiedad.
+
+document.write("<p>*Voy a contar la cantidad de caracteres de mi cadena: </p>" + miCadena.length);
+
+//charAt(indice) : devuelve el caracter de la posicion indicada como índice.
+//el primer indice de una cadena siempre es 0(cero)
+
+document.write("<p>*Voy a mostrar el caracter 10 de mi cadena: </p>" + miCadena.charAt(10));
+
+//toString : mostrar el ultimo caracter de mi cadena usando la propiedad lenght
+
+let cantidad = miCadena.length;
+
+document.write("<p>*Voy a mostrar el ultimo caracter de mi cadena usando la propiedad lenght: </p>" + miCadena.charAt(miCadena.length - 1));
+
+//indexOf(caracter, [desde]) : devuelve la posicion de la primera vez que aparece el caracter indicado.
+//Si no encuentra el caracter devuelve -1.
+//[desde] es opcional, e indica en posicion comienza.-
+
+document.write("<p>*Voy a mostrar la posicion de la primera letra c: </p>" + miCadena.indexOf("c"));
+
+//lastIndexOf(caracter,[desde]) : igual que indexof, solo que empieza por el final.
+
+document.write("<p>*Voy a mostra la posicion de la letra x: </p>" + miCadena.lastIndexOf("x"));
+
+//replace(substring_a_buscar, nuevo_cadena) : remplaza trozos de texto de una cadena por otro texto.
+
+document.write("<p>*Voy a mostrar la cadena cambiando la palabra 'largo' por 'corto': </p>" + miCadena.replace("largo", "corto"));
+
+//split(separador) : sirve para crear un vector partir de nuestra cadena y separarlo en varios trozos por el separador indicado.
+//debemos utilizar un 'for of' para guardar las partes e imprimirlas.
+
+document.write("<p>*Voy a mostrar la cadena separada por espacios: </p>");
+for (let parte of miCadena.split(" ")) {
+    document.write("<p>" + parte + "</p>");
+}
+
+//substring(inicio, [fin]) : nos devuelve la subcadena que empieza con el caracter de inicio y termina con el caracter fin.
+//si no ponemos fin temina al final de string.
+
+document.write("<p>*Voy a mostrar desde la ubicacion 10 hasta la 20: </p>" + miCadena.substring(10, 20));
+
+//toLowerCase() : convierte a minuscula el string.
+
+document.write("<p>*Voy a convertir la cadena a minusculas: </p>" + miCadena.toLowerCase());
+
+//toUpperCase() : convierte a mayuscula todo el string.
+
+document.write("<p>*Voy a convertir la cadena a mayusculas: </p>" + miCadena.toUpperCase());
+
+//toString() : convierte cualquier parametro a string.
+
+let numeros = 123456;
+document.write("<p>*Voy a convertir numeros a string: </p>" + numeros.toString());
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

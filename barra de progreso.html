@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barra de progreso</title>
+    <style>
+        #barra{
+            height: 50px;
+        }
+    </style>
+</head>
+<body>
+    <form id="formulario" action="" >
+        <label  for="longitud">longitud:</label>
+        <input id="longitud" type="text">
+        <br>
+        <label for="color">color: </label>
+        <select id="color" name="color">
+            <option value="red">rojo</option>
+            <option value="green">verde</option>
+            <option value="blue">azul</option></select>
+        <br>
+        <label for="">tiempo</label>
+        <input  id="tiempo" name="tiempo" type="text">
+            <br>
+        <input  id="botonComenzar" type="button" value="comenzar">
+    </form>
+
+    <span id="porcentaje">0</span>%
+    <div id="barra"></div>
+    <div>
+        <script>
+            function progreso(){
+                let counter = 0;
+                let longitud = document.querySelector("#longitud").value;
+                let color = document.querySelector("#color").value;
+                let tiempo = document.querySelector("#tiempo").value;
+            }
+        </script>
+
+    </div>
+ 
+</body>
+</html>

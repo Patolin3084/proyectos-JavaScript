@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bucles While</title>
+    <script>
+        //que pida un valor entero y cree una lista con los numero hasta el valor, separado con comas.
+
+        function ej1()
+        {
+            let numerointro;
+            let i = 0;
+            numerointro = prompt("Ingrese un numero: ");
+            numerointro = Number(numerointro);
+                while(i <= numerointro)
+                {
+                    document.write(i + ", ");
+                    i++;
+                }
+        }
+        //ej1();
+
+        //entra un numero del 1 al 5, si esta fuera que pida el numero nuevamente.
+
+        function ej2()
+        {
+            let numerointro = 0;
+            while(numerointro < 1 || numerointro > 5)
+            {
+                numerointro = prompt("Ingrese un numero del 1 al 5: ");
+                numerointro = Number(numerointro);
+            }
+        }
+        //ej2();
+
+        //un promp que pregunte si desea cancelar el programa, escriba n o N para salir, cualquier otro caracter vuelve a preguntar.-
+
+        function ej3()
+        {
+            let mensaje = "s";
+            
+                while(mensaje != "n" && mensaje != "N")
+                {
+                    mensaje = prompt("Desea cancelar el programa? n/N: ");
+                }
+        }
+        //ej3();
+
+        //determinar si el numero introducido es primo o no.
+
+        function ej4()
+        {
+            let numerointro = 0;
+            let i = 2;
+            let esPrimo = true;
+            numerointro = prompt("Ingrese un numero para saber si es primo: ");
+            if(i < numerointro)
+            {
+                while(esPrimo && i<numerointro)
+                {
+                    esPrimo = numerointro % i != 0;
+                    i++;
+                }
+            }
+            if(esPrimo)
+            {
+                document.write(numerointro + " es un numero primo.");
+            }
+            else
+            {
+                document.write(numerointro + " NO es numero primo.");
+            }
+        }
+
+        //ej4();
+
+
+        //introducir una clave, si coincide con clave guardada: acceso permitido, si es erronea: acceso denegado, y si falla 3 veces: Alerta intruso.-
+
+        function ej5()
+        {
+            let pass = "123456";
+            let passIntro = "";
+            i = 1;  
+            while(i <= 3)
+            {   
+                passIntro = prompt("Ingresa Password: ");    
+                if(passIntro == pass)
+                {
+                    document.write("Aceso Permitido 🏁");
+                    break;
+                }
+                else
+                {
+                    alert("<p>Aceso Denegado 🚩. Llevas " + i + "/3 intentos.</p>");
+                    i++;
+                }
+            }
+            if(i == 4)
+            document.write("A L E R T A    I N T R U S O  🚨");
+        }
+
+        //ej5();
+
+        //un prompt que valla sumando numeros hasta que se teclee un 0(cero).
+
+        function ej6()
+        {
+            let numerointro;
+            let resultado = 0;
+            while(resultado >= 0)
+            {
+                if(numerointro == 0)
+                {
+                    document.write("El resultado de la suma es: " + resultado);
+                    break;
+                }
+                else
+                {
+                    numerointro = prompt("Ingrese un numero para ser sumado. 0(cero) para mostrar resultado: ");
+                    numerointro = Number(numerointro);
+                    resultado = resultado + numerointro;
+                }   
+            }
+            return resultado;
+        }
+
+        //ej6();
+
+        function ej6B()
+        {
+            let numerointro;
+            let resultado = 0;
+            do
+            {
+                numerointro = prompt("Ingrese un numero para ser sumado. 0(cero) para mostrar resultado: ");
+                numerointro = Number(numerointro);
+                resultado = resultado + numerointro;
+            }while(numerointro > 0);
+            //document.write("El resultado de la suma es: " + resultado);
+            return resultado;
+        }
+
+        //ej6B();
+
+        //un prompt que valla ingresando numeros y que al teclear 0(cero) diga cual es el menor y el mayor.
+
+        function ej7()
+        {
+            let numerointro;
+            let menor = 0;
+            let mayor = 0;
+            numerointro = prompt("Ingrese un numero. Precione 0(cero) para saber cual es el menor y el mayor: ");
+            numerointro = Number(numerointro);
+            while(numerointro != 0)
+            {
+                if(mayor == 0)
+                {
+                    mayor = numerointro;  
+                    numerointro = prompt("Ingrese un numero. Precione 0(cero) para saber cual es el menor y el mayor: ");
+                }
+                else
+                {
+                    if(numerointro < mayor)
+                    {
+                        menor = numerointro;
+                        numerointro = prompt("Ingrese un numero. Precione 0(cero) para saber cual es el menor y el mayor: ");
+                    }
+                    else
+                    {
+                        mayor = numerointro;
+                        numerointro = prompt("Ingrese un numero. Precione 0(cero) para saber cual es el menor y el mayor: ");
+                    }
+                }
+            }
+            document.write("<p>El numero menor es: " + menor + "</p>");
+            document.write("<p>El numero mayor es: " + mayor + "</p>");
+        }
+
+        //ej7();
+        //funciona mal.
+
+        function ej7B()
+        {
+            let numerointro;
+            let menor = null;
+            let mayor = null;
+            while(numerointro != 0)
+            {        
+                numerointro = prompt("Ingrese un numero. Presione 0(cero) para saber cual es el menor y el mayor: ");
+                numerointro = Number(numerointro);  
+                if(numerointro != 0)   {
+                    (menor == null ? menor = numerointro : (menor < numerointro ? menor = menor : menor = numerointro));
+                    (mayor == null ? mayor = numerointro : (mayor > numerointro ? mayor = mayor : mayor = numerointro));  
+                }
+                console.log("Numeros menor: "+menor+"  mayor  "+mayor + "   numintr  "+numerointro);
+                /*
+                (menor < numerointro ? menor : numerointro)
+                if(menor < numerointro)
+                    menor = menor;
+                else
+                    menor = numerointro;
+                */
+            }
+            document.write("<p>El numero menor es: " + menor + "</p>");
+            document.write("<p>El numero mayor es: " + mayor + "</p>");
+        }
+
+        //ej7B();
+
+        //entran numeros y si son par cuenta cuantos hay y si es impar sale y muestra la informacion.-
+
+        function ej8()
+        {
+            let numeroIntro;
+            let par = -1;
+            do {
+                numeroIntro = prompt("Ingresa un numero: ");
+                par++;          
+            } while (numeroIntro %2 == 0);
+            document.write("Se llego a la cantidad de " + par + " numeros pares.");
+        }
+
+        //ej8();
+
+        //un script: 1 leer datos: estas leyendo datos / 2 mostrar datos: estas mostando datos / 3 fin .
+        //preguntar al usuario que opcion elije y si introduce mal, marcar error y volver a pedir.
+
+        function ej9()
+        {
+            let numeroIntro = "";
+            let cont = 0;
+            do {
+                if(cont > 0){
+                    alert("ERROR! Precione ENTER y vuelva a intertarlo.");
+                }
+                numeroIntro = prompt("INGRESE: 1, para leer datos./ 2, para mostrar datos./ 3, Fin.");
+                cont++;
+                if(numeroIntro == "1"){
+                    document.write("Estas leyendo datos.");
+                }
+                else if(numeroIntro == "2"){
+                    document.write("Estas mostrando datos.");
+                }
+                else if(numeroIntro == "3"){
+                    document.write("Fin del programa.");
+                }
+                
+            } while (!(numeroIntro == "1" || numeroIntro == "2" || numeroIntro == "3"));
+            
+
+
+        }
+
+        //ej9();
+
+        //llamar a ej6 y si el resultado es par vuelve a llamar al ej6:
+
+        function ej10()
+        {
+            let resultado;
+            do {
+                resultado = ej6B();
+                document.write("El resultado del ejercicio 6 es: " + resultado);
+                
+            } while (resultado%2 == 0);
+        }
+
+        //ej10();
+
+        //pedir un numero por teclado y ordenarlo de forma inversa.
+
+        function ej11()
+        {
+            let numeroIntro;
+            numeroIntro = prompt("Ingrese un numero para mostrar su progresión inversa: ");
+            if(numeroIntro == 0){
+                ej11();
+            }
+            else if(numeroIntro < 0){
+                while(numeroIntro <= 0){
+                    document.write(numeroIntro + "  ");
+                    numeroIntro++;
+                }
+            }
+            else if(numeroIntro > 0){
+                while(numeroIntro >= 0){
+                    document.write(numeroIntro + "  ");
+                    numeroIntro--;
+                }
+            }
+        }
+
+        //ej11();
+        
+        //pedir un numero de 3 o mas digitos y que devuelva por pantalla la secuencia a la inversa. si no tiene 3 digitos, vuelve a pedir.
+
+        function ej12()
+        {
+            let numeroIntro;
+            numeroIntro = prompt("Ingrese un numero de 3 o mas digitos para mostrar su progresión inversa: ");
+            if((numeroIntro <= 99) && (numeroIntro >= -99)){
+                ej12();
+            }
+            else if(numeroIntro < 0){
+                while(numeroIntro <= 0){
+                    document.write(numeroIntro + "  ");
+                    numeroIntro++;
+                }
+            }
+            else if(numeroIntro > 0){
+                while(numeroIntro >= 0){
+                    document.write(numeroIntro + "  ");
+                    numeroIntro--;
+                }
+            }
+        }
+
+        function ej12A()
+        {
+            let numeroIntro;
+            let resultado;
+            let resultadoFinal = "";
+            numeroIntro = prompt("Ingrese un numero de 3 o mas digitos para mostrar su progresión inversa: ");
+            do {
+                resultado = numeroIntro % 10;
+                resultadoFinal = resultadoFinal + resultado;
+                numeroIntro = (numeroIntro - resultado) /10;
+
+            } while (numeroIntro > 0);
+            
+            console.log(resultadoFinal);
+        }
+
+        //ej12();
+        //ej12A();
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

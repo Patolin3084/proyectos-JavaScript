@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios Funciones</title>
+    <script>
+        //funcciones 
+        //ej 1 una funccion con dos argumento num1 y num2 y que devuelva como resultado la suma de ambos argumentos.
+
+        function suma(num1, num2){
+            let suma = num1 + num2;
+            return suma;
+        }
+        //document.write(suma(suma(2, 3), suma(4, 5)));
+        //A travez de la misma funcion pasada dos veces con parametros distintos conseguimos sumar 4 numeros con una funcion que solo recibe 2 argumentos.-
+
+
+        //ej 2 crear la función esPar(num) y debe devolver verdadero si el número es par y falso en caso contrario.
+
+        function esPar(num){
+            if(num %2 == 0){
+                return true;
+            }
+            else{
+                return false;
+            }
+        }
+
+        //console.log(esPar(3));
+
+
+        //ej 3 función que calcule si un número es múltiplo de otro. función multiplo(mul, div);
+
+        function multiplo(mul, div){
+            if(mul % div == 0){
+                return true;
+            }
+            else{
+                return false;
+            }
+        }
+
+        function multiplo2(mul, div){
+            return (mul % div == 0);
+        }
+        
+
+        //console.log(multiplo(6, 3));
+        ////console.log(multiplo2(5, 3));
+
+        //ej 4 definir una función que cree una cadena de una letra repetida tantas veces como le digamos (letra y repeticiones)
+
+        function cadena(letra, repeticion){
+            let guardar = "";
+            for(i = 0; i <= repeticion; i++){
+                guardar = guardar + letra;
+            }
+            return guardar;
+        }
+
+        //console.log(cadena("M", 10));
+
+
+
+        //ej 5 una función que determine el maximo comun divisor de dos numeros.
+
+        function mCD(num1, num2){
+
+
+        }
+        
+        
+
+        //ej 6 una funccion que calcule el factorial de un numero (con recursividad)
+
+        function factorial(num){
+            if( num <= 1){
+                return 1;
+            }
+            return num * factorial(num - 1);
+        }
+        //console.log(factorial(5));
+
+
+
+        //ej 7 una función que recibe un número como argumento y me díga si es un palíndromo.
+
+        function palindromo(num){
+            let numeroIntro = num;
+            let resultado;
+            let resultadoFinal = "";
+            do {
+                resultado = numeroIntro % 10;
+                resultadoFinal = resultadoFinal + resultado;
+                numeroIntro = (numeroIntro - resultado) /10;
+
+            } while (numeroIntro > 0);
+            resultadoFinal = Number(resultadoFinal);
+            return (resultadoFinal == num);
+        }
+
+        //console.log(palindromo(12321));
+
+
+
+        //ej 8 una función que reciba como argumento un precio y el porcentaje de impuestos y debe devolver el total a pagar, pero si el precio es mayor de 100 se le hace un 10% de descuento
+
+        function pagar(precio, impuesto){
+            let pago;
+            pago = precio + ((precio * impuesto) / 100);
+            if(precio >= 100){
+                pago = pago - ((pago * 10) / 100);
+            }
+            return pago;
+            
+        }
+
+        //console.log(pagar(200, 21));
+
+
+
+        //ej 9 función que convierte notas en calificaciones: menos de 5 es un suspenso,  menos de 6 es un aprobado,  menos de 7 bien, menos de 9 notable,
+        // menos de 10 sobresaliente,  y 10 matricula.
+
+        function calificaciones(nota){
+            let notaTraducida;
+            switch(nota){
+                case 5:
+                    notaTraducida = "Aprobado"
+                    break;
+                case 6:
+                case 7:
+                    notaTraducida = "Bien"
+                    break;
+                case 8:
+                case 9:
+                    notaTraducida = "Notable"
+                    break;
+                default:
+                    notaTraducida = "Suspenso"
+            }
+            return notaTraducida;
+        }
+
+        //console.log(calificaciones(2));
+
+
+
+        //ej 10 una función que devuelva el siglo a que corresponde un año.
+
+        function siglo(año){
+            let numeroIntro = año;
+            let resultado = 0;
+            do {
+                numeroIntro = (numeroIntro / 100) + 1;
+                numeroIntro = (numeroIntro - (numeroIntro % 1));
+                resultado = numeroIntro; 
+
+            } while (resultado = 0);
+            return numeroIntro;  
+        }
+        console.log(siglo(1));
+
+
+
+    </script>
+
+</head>
+<body>
+    
+</body>
+</html>

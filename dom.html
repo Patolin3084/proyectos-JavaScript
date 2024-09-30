@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <script>
+    //A partir de ahora empezaremos a usar el script dentro del body.        
+            console.log("llamando al body desde el script " + document.body);
+
+    </script>
+    <style>
+        .mi-clase{
+            background-color: aqua;
+        }
+        .mi-clase2{
+            background-color: brown;
+        }
+        .mi-clase3{
+            background-color: blueviolet;
+        }
+    </style>
+</head>
+<body>
+    <header><h1>dom html(document objet model)</h1></header>
+    <main><div>
+        <ul id = "mi-lista">
+            <li>primer li</li>
+            <li>segundo li</li>
+            <li>tercer li</li>
+            <li>cuarto li</li>
+            <li>quinto li</li>
+        </ul>
+
+    </div>
+
+<div id="divInnerHTML">
+</div>
+<div id="divTextContent"></div>
+
+</main>
+
+    <script>
+        console.log("llamando al body desde el script " + document.body);
+        for(let i = 0; i < document.body.childNodes.length; i++)
+        {
+            console.log("El elemento con indice " + i + " es: " + document.body.childNodes[i]);
+        }
+        for(let elemento of document.body.childNodes)
+        {
+            console.log("El elemento es: " + document.body.childNodes[0]);
+        }
+        console.log(document.head.nextSibling);
+
+        console.log(document.body.previousSibling);
+
+        console.log("El padre del head es: " + document.head.parentElement);
+
+        for(let elemento of document.body.children)
+        {
+            console.log("El elemento es: " + document.body.children[1]);
+        }
+
+        //document.getElementbyId(): sirve para seleccionar un elemento a travez de su ID.
+        //document.getElementsByClassName(): entrega elementos con la clase indicada.
+        //document.getElementsByTagName(): entrega elementos con el nombre de etiqueta indicado.
+        //document.getElementsByName(): entrega elementos que encuentra a travez de su nombre.
+
+        //document.querySelector(): 
+        //document.querySelectorAll():
+
+        //document.head.closest(): nos devuelve el padre;
+        //document.contains(): para saber si un elemento es descendiente de otro;
+
+        //inner: para modificar lo que tiene dentro
+
+        let miLista = document.getElementById("mi-lista");
+        console.log(miLista);
+        console.log(miLista.innerHTML);
+        for(let element of miLista.children){
+            //element.innerHTML = element.innerHTML + (" Un texto");
+            
+            element.textContent = element.textContent + (" Un texto");
+            console.log(element);
+        }
+
+
+
+        //let nombre= prompt("cual es tu nombre", "<b>Marcos</b>");
+        //document.getElementById("divInnerHTML").innerHTML = nombre;
+        //document.getElementById("divTextContent").textContent = nombre;
+
+        //for(let element of document.querySelector("#mi-Lista").children){
+            
+        //    alert(element.textContent);
+        //}
+
+        console.log(document.querySelector("#mi-lista").hasAttribute("id"));
+
+        //hasAttribute: para saber si tiene un atributo en particular.
+
+        console.log(document.querySelector("#mi-lista").getAttribute("id"));
+
+        //getAtribute: para que entregue el nombre del atributo.
+
+        console.log(document.querySelector("#mi-lista").setAttribute("class", "mi-clase"));
+
+        //setAttribute: crea un atributo nuevo
+
+        console.log(document.querySelector("#mi-lista").removeAttribute("class"));
+
+        //removeAttribute: borra un atributo
+
+        //console.log(document.querySelector("#mi-lista").attributes("class"));
+
+        //attributes: nos devuelve una coleccion con todos los atributos de un elemento.
+
+        let nuevoLi = document.createElement("li");
+        nuevoLi.textContent = "este li es nuevo";
+
+        document.querySelector("#mi-lista").append(nuevoLi);
+
+        //append: inserta al final del nodo.
+
+        document.querySelector("#mi-lista").prepend(nuevoLi);
+
+        //prepend: inserta al principio del nodo.
+
+        document.querySelector("#mi-lista").lastElementChild.remove();
+
+        //remove: elimina un elemento
+
+        //document.querySelector("#mi-lista").setAttribute("class", "mi-clase");
+        console.log(document.querySelector("#mi-lista").className);
+        
+        document.querySelector("#mi-lista").classList.add("mi.clase2");
+
+        document.querySelector("#mi-lista").classList.add("mi.clase3");
+
+        document.querySelector("#mi-lista").classList.remove("mi.clase3");
+
+        document.querySelector("#mi-lista").classList.toggle("mi.clase3");
+
+        //style
+
+        document.querySelector("#mi-lista").style.color;
+
+        document.querySelector("#mi-lista").classList.toggle("mi.clase3");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+    </script>
+</body>
+</html>

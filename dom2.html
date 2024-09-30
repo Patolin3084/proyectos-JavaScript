@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM2</title>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: content-box;
+        }
+        .container{
+            margin: 0 auto;
+            max-width: 800px;
+        }
+
+        body{
+            
+
+        }
+
+        #div-tabla{
+
+        }
+
+        table{
+            border: 2px;
+        }
+        th{
+            border-color: blue;
+            border-style: dotted;
+        }
+        td{
+            border-color: red;
+            border-style: ridge;
+        }
+        li:hover{
+            background-color: aquamarine;
+        }
+        
+        .flexrow{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+        .centrarflex{
+            justify-content: center;
+        }
+        a{
+            text-decoration: none;
+        }
+        .forma{
+            margin: 10px;
+            border-radius: 20px ;
+        }
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+    
+        <header><h1>Practica de DOM</h1></header>
+
+        <main>
+            <div id="div-tabla">
+                <table>
+                    <tr>
+                        <th>cabecera 1</th>
+                        <th>cabecera 2</th>
+                        <th>cabecera 3</th>
+                        <th>cabecera 4</th>
+                        <th>cabecera 5</th>
+                    </tr>
+                    <tr>
+                        <td>celda 1 - 1</td>
+                        <td>celda 1 - 2</td>
+                        <td>celda 1 - 3</td>
+                        <td>celda 1 - 4</td>
+                        <td>celda 1 - 5</td>
+                    </tr>
+                    <tr>
+                        <td>celda 2 - 1</td>
+                        <td>celda 2 - 2</td>
+                        <td>celda 2 - 3</td>
+                        <td>celda 2 - 4</td>
+                        <td>celda 2 - 5</td>
+                    </tr>
+                    <tr>
+                        <td>celda 3 - 1</td>
+                        <td>celda 3 - 2</td>
+                        <td>celda 3 - 3</td>
+                        <td>celda 3 - 4</td>
+                        <td>celda 3 - 5</td>
+                    </tr>
+                    <tr>
+                        <td>celda 4 - 1</td>
+                        <td>celda 4 - 2</td>
+                        <td>celda 4 - 3</td>
+                        <td>celda 4 - 4</td>
+                        <td>celda 4 - 5</td>
+                    </tr>
+                    <tr>
+                        <td>celda 5 - 1</td>
+                        <td>celda 5 - 2</td>
+                        <td>celda 5 - 3</td>
+                        <td>celda 5 - 4</td>
+                        <td>celda 5 - 5</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div id="div-menu"><nav>
+                <ul class="flexrow centrarflex">
+                    <li class="forma dropdown "><a href="https://www.google.com/" target="_blank">Menu 1</a></li>
+                    <li class="forma dropdown "><a href="#">Menu 2</a></li>
+                    <li class="forma dropdown "><a href="#">Menu 3</a></li>
+                    <li class="forma dropdown "><a href="#">Menu 4</a></li>
+                    <li class="forma dropdown "><a href="#">Menu 5</a></li>
+                </ul>
+            </nav>
+            </div>
+
+            <div id="div-media">
+                <img src="https://verdecora.es/blog/wp-content/uploads/2018/02/ensenar-loro.jpg.webp" alt="aprender como loro">
+                
+                <iframe width="600" height= "300" src="https://www.youtube.com/embed/hRF4y5AHo_s" title="639Hz: sonidos tibetanos para curar la vieja energía negativa" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                
+            </div>
+
+            <div id="div-tabla2">
+
+
+                
+            </div>        
+        </main>
+        
+        <footer></footer>
+    </div>
+
+    <script>
+        function crearTabla(){
+            document.querySelector("#div-tabla2").append(document.createElement("nav"));
+            document.querySelector("#div-tabla2 nav").append(document.createElement("table"));
+            document.querySelector("#div-tabla2 nav table").append(document.createElement("tr"));
+            let cabecera;
+            for(i = 0; i <= 5; i++){
+                cabecera = document.createElement("th");
+                cabecera.textContent = "Cabecera " + i;
+                document.querySelector("#div-tabla2 nav table tr").append(cabecera);
+            }
+            let trs, tds;
+            for(j = 0; j <= 20; j++){
+                trs = document.createElement("tr");
+                document.querySelector("#div-tabla2 nav table").append(trs);
+                
+                for(k = 0; k <= 5; k++){
+                    tds = document.createElement("td");
+                    tds.textContent = "Celda " + j + " - " + k;
+                    trs.append(tds);
+                }  
+            }
+        }
+        crearTabla();
+
+        function cruz(){
+            for(i = 0; i < 5; i++){
+                document.querySelector("#div-tabla table tbody").rows[i + 1].cells[i].style.backgroundColor = "red";
+            }
+        }
+        cruz();
+    </script>
+    
+    
+</body>
+</html>
+

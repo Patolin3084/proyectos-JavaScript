@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funcion</title>
+    <script>
+function saludar(){
+    alert("Hola Mundo");
+}
+function saludarPersona(persona){
+    alert("Hola "+ persona);
+}
+let persona = "Marcos 😎";
+
+/* saludarPersona(persona);
+saludarPersona("Leonardo 😃"); */
+
+function saludarPersona2(){
+    /* alert ("Hola "+ persona);
+    let persona2 = "😜😃😊😆";
+    alert ("Hola"+ persona2); */
+
+}
+saludarPersona2();
+/* alert ("Esto esta fuera de la funcion y muestra: "+persona); */
+/* El siguiente alert no funcionara por que la variable persona2 esta
+ creada dentro de la funcion saludarPersona2(). */
+/* alert ("Esto esta fuera de la funcion y muestra: "+persona2); */
+
+function mostrarMensaje(de, mensaje = "Este es el mensaje"){
+    alert(de + ":" + mensaje);
+}
+/* mostrarMensaje("Marcos", "Leonardo");
+mastrarMensaje("Marcos"); */
+
+function suma(a, b){
+    return(a+b);  
+}
+
+/* El return sirve para devolvernos cualquier expresion. */
+/* console.log ("La suma de 5+3 es igual a: "+suma(5,3)); */
+console.log (`La suma es igual a: ${suma(3, 5)}`);
+
+/* function holaMundo(){
+    alert("Hola Mundo");
+}
+let holaMundoFuncion = function(){alert("Hola Mundo");};
+holaMundo();
+alert (holaMundoFunction());
+holaMundoFunction(); */
+
+function preguntar(pregunta, muestraOk, muestraKo){
+    if (confirm(pregunta)){
+    muestraOk();
+    }
+    else{
+        muestraKo();
+    }
+}
+
+/* Callback */
+ function muestraOk(){
+ alert("Has Confirmado");}
+
+ function muestraKo(){
+ alert("Has Rechazado");}
+
+ //preguntar("Estas de acuerdo conmigo?", muestraOk, muestraKo);
+
+ /* funciones flecha (arrow) */
+let max = (a, b) => ( a>b ? a:b );
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objetos y Array</title>
+    <script>
+        let myObjeto={
+            nombre : "Marcos",
+            edad : 43,
+            alumno : true,
+        };
+
+        myObjeto.apellido = "Romero";
+
+//delete(): borra un elemento.-
+
+        for(let key in myObjeto){
+            document.write(key + ": " + myObjeto[key]);
+            document.write("<p></p>");
+            }
+
+        let frutas=[
+            "naranjas",
+            "bananas",
+            "mandarinas",
+            "sandias",
+            ];
+
+//push(): mete en el ultimo lugar del array y devuelve la longitud.
+        frutas.push("fresas");
+        
+        for(let key in frutas){
+            document.write( frutas[key]);
+            document.write("<p></p>");  
+        }
+
+
+//shift(): saca el primer elemento del array.
+        document.write("la primera fruta del array es: " + frutas.shift());
+        document.write("<p></p>");
+//pop(): saca el ultimo elemento del array y devuelve la longitud.
+        document.write("la ultima fruta del array es: " + frutas.pop());
+        document.write("<p></p>");
+//unshift(): mete al princio del array y devuelve la longitud.
+        frutas.unshift("pomelo")
+        document.write("ahora la primera fruta del array es: " + frutas[0]);
+        document.write("<p></p>");
+
+        for (let index = 0; index < frutas.length; index++) {
+            document.write(frutas[index]);
+            document.write("<p></p>");
+        }
+
+        frutas.forEach(function(elemento,indice,array){
+            document.write(`${elemento} está en el indice ${indice} dentro del array ${array}`);
+            document.write("<p></p>");
+        });
+
+
+
+        //alert(frutas.indexOf("mandarinas"));
+        document.write("Esto es un string".lastIndexOf("t"));
+        document.write("<p></p>");
+        document.write("Esto es un string".indexOf("t"));
+        document.write("<p></p>");
+        document.write("Existe la fruta mandarinas: " + frutas.includes("mandarinas"));
+        document.write("<p></p>");
+        document.write("Existe la fruta sandias: " + frutas.includes("melon"));
+        document.write("<p></p>");
+        document.write("Existe la fruta sandias: " + frutas.reverse("melon"));
+        document.write("<p></p>");
+
+
+
+        let numArray = new Array(1,2,3,4,5);
+        for(let i = 0; i < numArray.length; i++){
+            document.write(numArray[i] + " "); 
+        }
+        document.write("<p></p>");
+        numArray.reverse();
+        for(let i = 0; i < numArray.length; i++){
+            document.write(numArray[i] + " "); 
+        }
+        document.write("<p></p>");
+
+        let textoSeparadoComa = "Esto es la primera, parte del texto, esto es la segunda, parte del texto";
+        let arraySeparaFraces = textoSeparadoComa.split(",");
+        for (let key of arraySeparaFraces) {
+            document.write("clave: " + key + " valor: " + arraySeparaFraces[key]);
+            document.write("<p></p>");   
+        }
+
+
+
+        let textoUnirComa = arraySeparaFraces.join(",");
+        document.write(textoUnirComa);
+        document.write("<p></p>");   
+
+        //La funcion keys() del objeto nos devuelve un array con todas las claves. 
+        //La funcion values() del objeto nos devuelve un array con todas los valores.
+        //La funcion entries() del objeto nos devuelve un array que tiene dentro varios array clave-valor.
+        
+        document.write("Las claves de mi Objeto son: " + Object.keys(myObjeto));
+        document.write("<p></p>"); 
+        document.write("Las valores de mi Objeto son: " + Object.values(myObjeto));
+        document.write("<p></p>");
+        document.write("Las array clave-valor de mi Objeto son: " + Object.entries(myObjeto));
+        document.write("<p></p>");
+
+        //Json
+        //stringify: El metodo stringify convierte cualquier cosa a formato Json.
+
+        document.write(JSON.stringify(myObjeto));
+
+        //parce: El metodo parse convierte un formato Json a clave-valor.
+
+        //document.write(JSON.parse(JSON.stringify(myObjeto)));
+
+        let myJson = JSON.stringify(myObjeto);
+        let myJsonInObject = JSON.parse(myObjeto);
+        let myObjetoInArray = Object.entries(myJsonInObject);
+
+        document.write(Object.entries(JSON.parse(JSON.stringify(myObjeto))));
+
+        
+
+
+
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

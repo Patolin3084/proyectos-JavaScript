@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practica 1</title>
+
+    <script>
+        /*Number*/
+        /*Boolean dos valores true o false */
+        /*String una cadena de texto*/
+        /*null es un dato que se ha creado pero sin valor*/
+        /*undefined  que no esta difinido*/
+        /*object es un tipo complejo */
+        /*Array sirve para almacenar varios elementos */
+        /*document es un objeto que nos da javascript*/
+
+        /*window.console.log("Hola Mundo");*/
+        console.log("Hola Mundo");
+
+        const ANO_ACTUAL=2024;
+        var anoactual=2024;
+
+        /*var edad=30;*/
+        let nombre="Veselin";
+        let mensaje;
+        mensaje="Hola";
+       // alert("mensaje + nombre");
+        let apellido1, apellido2;
+        apellido1="Petrov";
+        apellido2="Ganchev";
+        console.log(nombre+" "+ apellido1+" "+ apellido2);
+        let numero1;
+        numero1=6.5;
+        let numero2=3.2;
+        console.log("El numero uno es: "+ numero1 );
+        console.log("El numero dos es: "+ numero2 );
+        console.log("La concadenacion de numero1 mas numero2 es "+ numero1 + numero2); //concadenacion
+        let suma=numero1+numero2;
+        console.log("La suma de numero1 mas numero2 es "+ suma);
+        //console.log("La concadenacion de numero1 mas numero2 es "+ "numero1 + numero2");
+        const MI_CUMPLE="08/02/1975";
+        console.log("Mi cumple es: "+ MI_CUMPLE);
+        let edad=35;
+        console.log(edad)
+
+       /* let dato = prompt("Dime un numero ", 5);
+        console.log("El numero que ha intrudicido es " + dato);
+
+        let dato_promp = prompt("Dime un numero ", 5);
+        console.log("El numero que ha intrudicido es " + dato_promp);*/
+
+        //typeof
+        console.log("Esta variable numero1 es de tipo  " +typeof numero1);
+
+        console.log("Esta variable apellido1 es de tipo  " +typeof apellido1);
+
+        let boleano = false;
+        console.log(boleano);
+        console.log("Esta variable boleano es de tipo  " +typeof boleano);
+
+        //let variableNula = null;
+        let variableNula = null;
+        console.log(variableNula);
+        console.log("Esta variable variableNula es de tipo  " +typeof variableNula);
+
+        let variableUndefinet;
+        console.log(variableUndefinet);
+        console.log("Esta variable variableUndefinet es de tipo  " +typeof variableUndefinet);
+
+       /* let variableArray =["Saab", "Volvo", "BMW"];
+        console.log(variableArray);
+        console.log("Esta variable variableArray es de tipo  " +typeof variableArray);
+
+        let variableObject;
+        console.log(variableObject);
+        console.log("Esta variable variableObject es de tipo  " +typeof variableObject);*/
+
+        let numberToString = 5;
+        console.log("La variable numberToString es de tipo number, pero la voy a convertir al tipo" +typeof String(numberToString));
+
+        let stringToNumber = "5";
+        stringToNumber = Number(stringToNumber);
+        console.log("La variable stringToNumber es de tipo string, pero la voy a convertir al tipo" +typeof stringToNumber);
+
+        //operaciones aritmeticas
+        let x=9, y=2;
+        console.log("La variable x vale " + x + "  La variable y vale " + y);
+        suma = x +y;        
+        console.log("La suma de las variables es " + suma);
+
+        let resta = x - y;
+        console.log("La resta de las variables es " + resta);
+
+        let multiplicacion = x * y;
+        console.log("La multiplicacion de las variables es " + multiplicacion);
+
+        let division = x / y;
+        console.log("La division de las variables es " + division);
+
+        let exponente = x ** y;
+        console.log("La exponente de las variables es " + exponente);
+
+        let resto = x % y;
+        console.log("El resto de las variables es " + resto);
+
+        let n = 3;
+        console.log("La variable n vale " + n);
+        n = n + 5;
+        console.log("La variable n vale " + n);
+        n = n / 2;
+        console.log("La variable n vale " + n);
+        n = n * 5;
+        console.log("La variable n vale " + n);
+        /*n = n % 2;
+        console.log("La variable n vale " + n);
+        n = n ** 5;
+        console.log("La variable n vale " + n);*/
+
+        //incremento y decremento
+        n++;
+        console.log("La variable n vale " + n);
+        n--;
+        console.log("La variable n vale " + n);
+
+        n+=8;  //igual a n=n+8;
+        console.log("La variable n vale " + n);
+        n-=8;  //igual a n=n-8;
+        console.log("La variable n vale " + n);
+
+        //comparaciones <, <=, >, >=, ==, !=,
+
+        console.log("La variable x vale " + x + "  La variable y vale " + y);
+
+        let xx = "9";
+        console.log(x<=y);
+        console.log(x>=y);
+        console.log(x==xx);
+        console.log(x!=xx);
+        console.log(x===xx);
+        console.log(x!==xx);
+
+        console.log("¿La a minuscula es mayor que A mayuscula? " + ("a">"A"));
+
+        console.log("¿La a minuscula es mayor que z minuscula? " + ("a">"z"));
+
+        // Sentencias condicionales
+
+       /* let sigloXX = confirm("Ha nacido usted en el siglo XX");
+    
+        
+        if (sigloXX == true ) {
+            console.log("Ha nacido en el siglo XX");
+        } 
+        else {
+            console.log("No ha nacido en el siglo XX");
+        } */
+
+      /*  let numeroEntero = prompt("Introdizca un numero entero de 0 a 10")
+
+        if (numeroEntero >= 5) {            
+            if (numeroEntero >=8) {
+                console.log("El numero introducido es mayor o igual que 8");
+            }else {
+                console.log("El numero introducido es mayor que 5 y menor que 8");
+            }
+        } else if (numeroEntero >= 2) {
+            console.log("El muneor intrudocido es mayor que 2 ");
+        } else {
+            console.log("El numero es 0 o 1");
+        }  */
+        
+        //Operador ternario
+
+        /*let mayorDeEdad = prompt("Escribe tu edad");
+        let esAdulto = (mayorDeEdad >= 18) ? true : false; 
+        console.log("La variable esAdulto vale " + esAdulto );*/
+
+/*
+        let sigloXX = confirm("Ha nacido usted en el siglo XX");                    
+        (sigloXX==true) ? console.log("Ha nacido en el siglo XX") : console.log("No ha nacido en el siglo XX");
+*//*
+        
+     let numero = prompt("Dame un numero");
+     
+
+     (numero >= 5) 
+     ? (
+        (numero >= 8) ? console.log("En nuemro es mayor o igual a 8") : console.log("El numero es menor que 8")
+     ) 
+     : (  
+        (numero >= 2) 
+        ? console.log("El numero es mayor que 2 ") 
+        : console.log("El numero es 0 o 1 ")  
+        ) */
+     
+     //Operadores logicos   or ||;  an &&;  not !; nulos ?? o operador de cualiscensia;
+     //or || - devuelve true cuando hay true
+     //an && - devuelve true cualdo todos son iguales, si hay uno distinto devuelve false
+     //
+
+        /*
+     let numeroAndOr = prompt("Introduce un numero ");
+
+        if (numeroAndOr < 18 || numeroAndOr > 36) {
+            console.log("El numero es menor que 18 y mayor que 36");
+        }
+        if (numeroAndOr > 18 && numeroAndOr <36) {
+            console.log("El numero es mayor que 18 y menor que 36");
+        }
+        if (numeroAndOr == 24) {
+            let numeroNot = false;
+            console.log("Numero Not es igual a " + numeroNot);
+            numeroNot = ! numeroNot;
+            console.log("Ahora, numero Not es igual a " + numeroNot);
+        }     */
+
+
+        // esto es un switch
+
+        let variableSwitch = prompt("Intriduzca un numero de 0 a 9");
+        
+        switch (variableSwitch) {
+            case "9":
+                console.log("Has intrudocido un 9 ");
+                break;
+            case "8":
+                console.log("Has intrudocido un 8 ");
+                break;
+            case "7":
+            case "6":
+            case "5":
+                console.log("Has intrudocido un 5 o un 6 o un 7"); 
+                break;
+            default:
+                console.log("Has intrudocido un numero de 0 a 4");
+                break;
+        } 
+
+       if (variableSwitch == "9") {
+        console.log("Has intrudocido un 9 ");
+       } else if (variableSwitch == "8") {
+        console.log("Has intrudocido un 8 ");
+       } else if (variableSwitch == "7" || variableSwitch == "6" || variableSwitch == "5") {
+        console.log("Has intrudocido un 5 o un 6 o un 7");
+       } else {
+        console.log("Has intrudocido un numero de 0 a 4");
+       }
+
+       // las dos formas son iguales y hacen lo mismo
+        
+       /* alert("Hola Mundo"); */
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Practica 1 con JavaScript</h1>
+    </header>
+    <main>
+
+
+    </main>
+    <footer>
+
+    </footer>
+    
+</body>
+</html>

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colores</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: content-box;
+        }
+        body{
+            font-size: 30px;
+            font-family: 'Times New Roman', Times, serif;
+            margin: 50px;
+            padding: 50x;
+        }
+        button{
+            width: 100px;
+            height: 50px;
+            border-radius: 50px;
+            border-style: groove;
+            padding: 40px;
+            margin: 5px;
+            font-size: 25px;
+            text-align: center;
+        }
+
+        .bAzul{
+            background-color:rgb(0, 0, 255);
+        }
+        .bAmar{
+            background-color: yellow;
+        }
+        .bRojo{
+            background-color: red;
+        }
+        #borrar{
+            width: 525px;
+            height: 50px;
+            text-align: center;
+        }
+        #container{
+            display: flex;
+        }
+
+        .flex-item{
+            width: 80px;
+            height: 80px;
+            border-radius: 30px;
+            padding: 20px;
+            margin: 10px;
+            text-align: center;
+            border: 1px solid #dddddd;
+        }
+        .flexrow{
+            
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+        .centrarflex{
+            justify-content: center;
+        }
+        .forma{
+            margin: 10px;
+            border-radius: 20px;
+        }
+        .dropdown {
+        position: static;
+        display: inline-block;
+        }
+
+        .grande{
+            font-size: 100px;
+        }
+        
+
+    </style>
+</head>
+<body>
+    <div>
+    <header>
+    <h1>COLORES</h1>
+    <h2>Presiona los botones</h2>
+    <button class="bAzul" onclick="creaDiv('bAzul')">azul</button>
+    <button class="bAmar" onclick="creaDiv('bAmar')">amarillo</button>
+    <button class="bRojo" onclick="creaDiv('bRojo')">rojo</button>
+    <br>
+    <button id="borrar" onclick="borrarTodos()">BORRAR TODOS</button>
+    </header>
+
+<main class="centrarflex">
+    <div class="forma dropdown flexrow" id="container">
+
+    </div>
+    <hr>
+    <div>
+        <input id="input-cambiante" type="text" placeholder="Escribe aqui: ">
+
+        <input id="input-cambiante2" type="text" placeholder="input-cambiante2">
+
+        <input id="input-cambiante3" type="text" placeholder="input-cambiante3">
+
+        <p id="pasar">Pasa el raton por encima...</p>
+
+        <p id="agrandar">Agranda esta frase.</p>
+
+        
+
+        <input id="input" type="number">
+        <p id="frase">Esta es la mejor frase</p>
+
+    </div>
+</main>
+
+<footer></footer>
+
+<script>
+
+    function creaDiv(clase){
+        let nuevoDiv = document.createElement("div");
+        nuevoDiv.classList.add("flex-item");
+        nuevoDiv.classList.add(clase);
+        nuevoDiv.onclick = function(){
+            this.remove()
+        };
+        document.querySelector("#container").append(nuevoDiv);
+        
+    }
+//con esta funcion creamos div's con un boton.
+
+    function borrarTodos(){
+        document.querySelector("#container").remove("div");
+    }
+//con esta funcion borramos todos los div juntos.
+
+    function borrarEste(){
+        let borrar = document.createElement("onclick")
+        document.querySelector("#container div").onclick = function(){
+            borrar;
+            //document.querySelector("#container div").remove("div");
+        }
+    }
+
+    document.querySelector("#input-cambiante").onclick = function(){
+        console.log("has echo click")
+    };
+
+    document.querySelector("#input-cambiante").onkeyup = function(){
+        console.log(this.value)
+    };
+
+//con this value accedemos al objeto que esta ejecutando el evento.
+
+        document.querySelector("#input-cambiante2").onblur = function(){
+            console.log("se ha perdido el foco")
+        };    
+        
+
+        document.querySelector("#input-cambiante3").onfocus = function(){
+            console.log("ha encontrado el foco")
+        };
+//onblur y onfocus son totalmente opuestos
+
+        document.querySelector("#pasar").onmouseover = function(){
+            this.textContent = "...el texto ha cambiado...";
+        };
+        document.querySelector("#pasar").onmouseout = function(){
+            this.textContent = "...y si vuelves a pasar volvera a cambiar.";
+        };
+//con este codigo consegimos que al pasar el cursor por la frase, esta cambie.
+
+        document.querySelector("#agrandar").onmouseout = function(){
+            this.classList.add("grande");
+        };
+//con este codigo consegimos que al pasar el cursor por la frase, esta cambie su tamaño a un predeterminado.
+
+        document.querySelector("#input").onchange = function(){
+            let frase = document.querySelector("#frase");
+            let inputValue = document.getElementById("input").value;
+            frase.style.fontSize = inputValue + "px";
+        };
+//con este codigo hacemos que tamaño de la frase cambie dinamicamente al valor asignado a travez del input.
+
+</script>
+</div>
+</body>
+</html>

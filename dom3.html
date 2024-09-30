@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom 3</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            font-size: 30px;
+            font-family: 'Times New Roman', Times, serif;
+            margin: 50px;
+            line-height: 2;
+        }
+        .flexrow{
+            display: flex;
+            flex-direction: row; 
+        }
+        .centrarflex{
+            justify-content: center;
+        }
+        a{
+            text-decoration: none;
+            border: #f50707;
+            border-style: outset;
+        }
+        nav ul{
+            list-style: none;
+        }
+        nav ul li{
+            padding: 50px;
+            background-size: cover;
+        }
+        nav ul li:nth-child(odd){
+            background-color: rgb(247, 175, 175);
+            background-image: url('https://empresas.blogthinkbig.com/wp-content/uploads/2019/11/Imagen3-245003649.jpg?fit=960%2C720');
+        }
+        nav ul li:nth-child(even){
+            background-color: rgb(175, 233, 247);
+            background-image: url('https://www.sopitas.com/site/wp-content/uploads/2015/08/oB4Mr.jpg');
+        }
+        ul li a:hover {
+            color: #f5f5f8;
+            font-size: 50px;
+        }  
+        .forma{
+            margin: 10px;
+            border-radius: 5px;
+        }
+        .dropdown {
+        position: relative;
+        display: inline-block;
+        }
+        .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        padding: 12px 16px;
+        z-index: 1;
+        }
+        .dropdown:hover .dropdown-content {
+        display: block;
+        }
+        .dropbtn {
+        background-color: #4CAF50;
+        color: white;
+        padding: 16px;
+        font-size: 16px;
+        border: none;
+        cursor: pointer;
+        }
+        .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        }
+
+        .dropdown-content a:hover {background-color: #f1f1f1}
+
+        .dropdown:hover .dropbtn {
+        background-color: #3e8e41;
+        }
+
+        .grid-container{
+            display: grid;
+            border: 2px solid #000;
+            margin-bottom: 20px;
+            padding: 10px;
+            box-shadow: 20px 20px 10px grey;
+        }
+        
+        .grid-item{
+            background-color: #f4f4f4;
+            padding: 20px;
+            margin: 10px;
+            text-align: center;
+            border: 1px solid;
+            
+        }
+        .grid-item:hover{
+            box-shadow: 5px 10px #888888;
+        }
+        #grid-columnas{
+            grid-repeat(2, 100px);
+            grid-auto-flow: column; grid-gap: 10px; height: 300px;
+        }
+
+        .color{
+            background-color: gray;
+        }
+        .nuevo-borde{
+            border: solid 3px;
+            border-color: yellow;
+            margin-top: 5px;
+        }
+        .par{
+            font-weight: bolder;
+        }
+        .impar{
+            font-style: italic;
+        }
+    </style>
+
+</head>
+<body>
+    <header>
+        <nav>
+            <ul class="flexrow centrarflex" >
+                <li class="dropdown forma"><a href="#">inicio</a>  
+                        <div class="dropdown-content">
+                            <a href="#">Link 1</a>
+                            <a href="#">Link 2</a>
+                            <a href="#">Link 3</a>
+                        </div>
+                </li>
+                <li class="forma"><a href="#">about us</a></li>
+                <li class="forma"><a href="#">contact</a></li>
+                <li class="forma"><a href="https://miposicionamientoweb.es/que-es-un-blog-para-que-sirve/" target="_blank">blog</a></li>
+            </ul>
+        </nav>
+        <img src="https://marketing4ecommerce.net/wp-content/uploads/2024/02/imagen-generada-con-nightcafe-e1708680739301.jpg" alt="">
+        <p>Lorem fistrum fistro apetecan al ataquerl diodenoo va usté muy cargadoo no te digo trigo por no llamarte Rodrigor te va a hasé pupitaa sexuarl
+            tiene musho peligro ahorarr. A peich a gramenawer a wan al ataquerl qué dise usteer qué dise usteer por la gloria de mi madre no puedor te voy
+            a borrar el cerito diodeno. Mamaar pecador a gramenawer papaar papaar fistro va usté muy cargadoo mamaar tiene musho peligro. De la pradera papaar
+            papaar diodeno al ataquerl torpedo ese hombree no te digo trigo por no llamarte Rodrigor pecador no puedor pecador ahorarr. Benemeritaar a wan tiene
+            musho peligro se calle ustée diodenoo ahorarr te voy a borrar el cerito al ataquerl llevame al sircoo diodenoo apetecan. Papaar papaar a wan me cago
+            en tus muelas de la pradera qué dise usteer de la pradera a gramenawer de la pradera qué dise usteer ese que llega apetecan.
+            Jarl ahorarr sexuarl fistro torpedo ahorarr. Ese hombree diodenoo no te digo trigo por no llamarte Rodrigor ese pedazo de apetecan de la pradera ahorarr
+            papaar papaar me cago en tus muelas. Al ataquerl a wan benemeritaar a peich me cago en tus muelas de la pradera apetecan no te digo trigo por no llamarte
+            Rodrigor. Benemeritaar quietooor pecador benemeritaar ese que llega papaar papaar. A peich te va a hasé pupitaa diodeno se calle ustée. Jarl diodeno ese
+            hombree tiene musho peligro torpedo ese que llega fistro al ataquerl te va a hasé pupitaa.</p>
+
+        <img src="https://media.es.wired.com/photos/641b2076880298eb68cc9b8a/16:9/w_1280,c_limit/Todd_Namban_Create_a_photorrealistic_portrait_of_a_red_fox_usin_cd0b7e04-868d-45d4-beaf-b7515e6154ca.png" alt="">
+        <p>Lorem fistrum te voy a borrar el cerito no puedor benemeritaar te voy a borrar el cerito. Fistro sexuarl mamaar llevame al sircoo va usté muy cargadoo
+            quietooor al ataquerl ese pedazo de papaar papaar. Benemeritaar a gramenawer tiene musho peligro a gramenawer. Jarl a gramenawer se calle ustée qué dise
+            usteer diodeno sexuarl. Apetecan a peich diodenoo se calle ustée ese que llega ese hombree. Condemor llevame al sircoo amatomaa me cago en tus muelas
+            diodeno de la pradera amatomaa jarl sexuarl fistro ese hombree. Hasta luego Lucas ahorarr me cago en tus muelas no puedor mamaar condemor. Diodeno ese
+            que llega te voy a borrar el cerito caballo blanco caballo negroorl me cago en tus muelas amatomaa caballo blanco caballo negroorl apetecan papaar papaar
+            de la pradera. Hasta luego Lucas me cago en tus muelas diodenoo va usté muy cargadoo.</p>
+
+        <br><br>
+
+        <section class="example">
+            <div class="grid-container" id="grid-columnas">
+                <div class="grid-item">Item 1</div>
+                <div class="grid-item">Item 2</div>
+                <div class="grid-item">Item 3</div>
+                <div class="grid-item">Item 4</div>
+                <div class="grid-item">Item 5</div>
+            </div>
+            <br>
+            <br>
+            <br>
+    </header>
+    <main></main>
+    <footer></footer>
+    <script>
+//crear un elemento div al final de la web.
+//añadir un parrafo, una imagen y una clase background gris dentro de este div creado y si se hace click para quitar o poner la clase.
+
+        function crearDiv(){
+            let divNuevo = document.createElement("div");
+            let p = document.createElement("p");
+            p.textContent = "añadir un parrafo, una imagen y una clase background gris dentro de este div creado y si se hace click para quitar o poner la clase.";
+            let img = document.createElement("img");
+            img.src = "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1d/4a/f7/d6/caption.jpg?w=1200&h=-1&s=1"
+            document.querySelector("header").append(divNuevo);
+            divNuevo.append(p);
+            divNuevo.append(img);
+            divNuevo.classList.add("color");
+            divNuevo.onclick = function(){
+                this.classList.toggle("color");
+            };
+        }
+
+        crearDiv();
+
+//añadir un boton que al pulsarlo nos diga el numero de enlaces que hay en toda mi web.
+
+        function crearBotonContador(){
+            let botonNuevo = document.createElement("button");
+            let nuevoP = document.createElement("p");
+            botonNuevo.textContent = "Contador de enlaces";
+            document.querySelector("header").append(botonNuevo);
+            document.querySelector("header").append(nuevoP);
+            botonNuevo.onclick = function(){
+                let contadorDeEnlaces;
+                contadorDeEnlaces = document.querySelector("body").getElementsByTagName("a");
+                nuevoP.textContent = "En esta pagina hay " + contadorDeEnlaces.length + " enlaces.";
+            };
+        }
+        crearBotonContador();
+
+//crear otro parrafo dentro de ese div que tenga como id para borrar, cuando le hacemos click se borra
+
+        function crearBorrar(){
+            let p = document.createElement("p");
+            p.textContent = "Otro parrafo.";
+            p.id = "onclick";
+            p.onclick = function(){
+                this.remove();
+            };
+            document.querySelector("header ").append(p);  
+        }
+        crearBorrar();
+
+//cambiarle el nombre al segundo elemento del menu y ponerle "segundo elemento".
+
+        function cambiarNombre(){
+            let segundoElemento = document.querySelector("body header nav ul li:nth-child(2)");
+            segundoElemento.textContent = "Segundo elemento";
+        }
+        cambiarNombre();
+
+//mostrar en un alert el margen de la primera imagen que sale en mi web.
+//ponerle un borde solido de 3 px amarillo a todas las imagenes que tengo en mi web;
+
+        function bordeSolido(){
+            let misImgWeb = document.querySelectorAll("body img");
+            for(let img of misImgWeb){
+                img.classList.add("nuevo-borde");
+                if(img==misImgWeb[0] || img==misImgWeb[2]){
+                    console.log("La primera imagen tiene " + getComputedStyle(img).marginTop);
+                }
+            }
+        }
+        bordeSolido();
+//alternar los parrafos para que los pares esten en negrita y los impares en italica.
+
+        function parrafoParImpar(){
+            let misParrafos = document.querySelectorAll("body p");
+            for(i = 0;i < misParrafos.length; i++){
+                if(i%2==0){
+                    misParrafos[i].classList.add("par");
+                }
+                else{
+                    misParrafos[i].classList.add("impar");
+                }
+            } 
+        }
+        parrafoParImpar();
+
+//crear un boton que al pulsarlo me saque un alert con el URL del ultimo enlace del menu.
+
+        function ultimoUrl(){
+            let nuevoButton = document.createElement("button");
+            nuevoButton.textContent = "URL";
+            nuevoButton.onclick = function(){
+                let getUrl = document.querySelector("body header nav ul li:last-child a");
+                let nuevoP = getUrl.getAttribute("href");
+                alert(nuevoP);
+            };
+            document.querySelector("header").append(nuevoButton);
+            
+        }
+        ultimoUrl();
+        
+//crear un input text al lado de un text area y q cada vez que escriba en el input salga escrito en el text area.-
+
+        function inputText(){
+            let nuevoBr = document.createElement("br");
+            let nuevoInput = document.createElement("input");
+            nuevoInput.type="text" 
+            nuevoInput.placeholder="Escribe aqui: "
+            let nuevoTextArea = document.createElement("textarea");
+            nuevoInput.onkeyup = function(){
+                nuevoTextArea.value = this.value;
+            };
+            document.querySelector("header").append(nuevoBr);
+            document.querySelector("header").append(nuevoInput);
+            document.querySelector("header").append(nuevoTextArea);
+        }
+        inputText();
+
+//crear otro input al que si hago doble click me muestre un alert avisando doble click, y sobre el mismo un alert avisando de un click simple, y otro para click derecho.-
+
+        function inputClick(){
+            let nuevoBr = document.createElement("br");
+            let nuevoInput = document.createElement("input");
+            document.querySelector("header").append(nuevoBr);
+            document.querySelector("header").append(nuevoInput);
+            nuevoInput.placeholder="un click, dos clicks o click derecho"
+            nuevoInput.onclick = function(){
+                console.log("Se ha echo click!");
+            };
+            nuevoInput.ondblclick = function(){
+                alert("Se ha echo doble click!");
+            };
+            nuevoInput.oncontextmenu = function(e){
+                e.preventDefault();
+                alert("Se ha echo click derecho!");
+            };
+        }
+        inputClick();
+
+    </script>
+</body>
+</html>

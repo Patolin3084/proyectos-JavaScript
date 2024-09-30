@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funciones de Tiempo</title>
+    <script>
+function saludar()
+{
+    alert("Hola Mundo");
+}
+
+//saludar();
+
+//setTimeout(saludar, 3000);
+
+function saludar2(nombre)
+{
+    alert("Hola " + nombre);
+}
+
+//setTimeout(saludar2, 3000, "Marcos");
+
+function saludar3(nombre)
+{
+    document.write("<p>Hola " + nombre + "</p>");
+}
+
+//saludar3("Marcos");
+
+//let interval = setInterval(saludar3, 2500, "Marcos");
+function parar(intervalo){
+    return clearInterval(intervalo);
+}
+//setTimeout(parar, 30000, interval);
+
+let ahora = new Date();
+
+document.write(ahora);
+
+//getFullYear
+
+document.write("<p>El año actual es: " + ahora.getFullYear() + "</p>");
+
+//getMonth
+
+document.write("<p>El mes actual es: " + Number(ahora.getMonth() + 1) + "</p>");
+
+//getDate
+
+document.write("<p>El dia del mes actual es: " + Number(ahora.getDate() ) + "</p>");
+
+//getDay
+
+document.write("<p>El dia de la semana actual es: " + Number(ahora.getDay() ) + "</p>");
+
+//gethours
+
+document.write("<p>La hora del dia actual es: " + Number(ahora.getHours() ) + "</p>");
+
+//getminute
+
+document.write("<p>El minuto de la hora actual es: " + Number(ahora.getMinutes() ) + "</p>");
+
+//getseconds
+
+document.write("<p>El segunso del minuto actual es: " + Number(ahora.getSeconds() ) + "</p>");
+
+//getmilliseconds
+
+document.write("<p>El milisegundo del segundo actual es: " + Number(ahora.getMilliseconds() ) + "</p>");
+
+//getUTCHours
+
+document.write("<p>El uso horario es: " + Number(ahora.getUTCHours() ) + "</p>");
+
+//now
+
+document.write("<p>La hora desde el punto cero(1-01-1970) es: " + Number(Date.now() / (1000*60*60*24*365) ) + "</p>");
+
+//Funcion Benchmark
+
+function diaDeLaSemana(day){
+    let diaEntregado;
+    if(day == 0){
+        diaEntregado = "Domingo";
+    }
+    else if(day == 1){
+        diaEntregado = "Lunes";
+    }
+    else if(day == 2){
+        diaEntregado = "Martes";
+    }
+    else if(day == 3){
+        diaEntregado = "Miercoles";
+    }
+    else if(day == 4){
+        diaEntregado = "Jueves";
+    }
+    else if(day == 5){
+        diaEntregado = "Viernes";
+    }
+    else if(day == 6){
+        diaEntregado = "Domingo";
+    }
+    return diaEntregado;
+}
+
+function benchmark(tiempo1, tiempo2){
+    return tiempo2 - tiempo1; 
+}
+
+
+let tiempo1 = Date.now();
+for(let i = 0; i < 10000000; i++)
+{
+    diaDeLaSemana(6);
+}
+let tiempo2 = Date.now();
+
+document.write("Los milisegundos son: " + benchmark(tiempo1, tiempo2));
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

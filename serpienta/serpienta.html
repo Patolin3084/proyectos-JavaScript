@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Serpienta</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: content-box;
+        }
+        html, body{
+            width: 100%;
+            height: 100%;
+        }
+
+        #divpequeno{
+            width: 30px;
+            height: 30px;
+            background-color:rgba(0, 0, 0, 0.815);
+            position: absolute;
+            border-radius: 15px;
+            left: 20px;
+            top: 50px;
+            z-index: 1;
+        }
+        
+        #divgrande{
+            width: 100%;
+            height: 100%;
+            position: relative;
+            
+        }
+        #imagenfondo{
+            width: 100%;
+            height: 100%;
+            background-image: url(fondo.jpg);
+            background-size: cover;
+            background-position: center;
+            opacity: 0;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            z-index: 2;
+        }
+        
+        .divcobayos{
+            width: 30px;
+            height: 30px;
+            background-color: brown;
+            position: absolute;
+            border-radius: 15px; 
+            z-index: 1;         
+        }
+        .contador{
+            width: 200px;
+            height: 30px;
+            background-color: rgba(128, 128, 128, 0.363);
+            font-size: 30px;
+            position: absolute;
+            z-index: 99;
+        }
+        #contador1{
+            left: 5px;
+            text-align: left;
+        }
+        #contador2{
+            right: 5px;
+            text-align: right;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div id="divgrande"></div>
+
+    <audio id="musica" src="musica/hound-dog-jazz-228434.mp3" autoplay loop></audio>
+    <audio id="sonido" src="sonido/videogamerisingsfxpart2-44801 (mp3cut.net).mp3"></audio>
+
+    <div id="imagenfondo"></div>
+
+    <div id="divpequeno"></div>
+
+
+
+    <script>
+        let cantidadCobayos = prompt("BIENVENIDO! Cuantos cobayos quieres darle de comer a tu serpienta hoy?");
+        let start1 = false;
+        let crono1;
+        let sound = document.querySelector("#sonido");
+
+        function sonidoComer(){
+            sound.play();
+        }
+
+        function movimiento(){ 
+            document.onkeydown = function(e){
+                nuevoSwitch(e.keyCode);
+                if(!start1){
+                    crono1 = setInterval(cronometro, 100);
+                    start1 = true;      
+                }    
+            };            
+        }
+
+        let divPequeno = document.querySelector("#divpequeno");
+        let izq = getComputedStyle(divPequeno).left.slice(0, -2);
+        izq = Number(izq);
+        let techo = getComputedStyle(divPequeno).top.slice(0, -2);
+        techo = Number(techo);
+
+        let divGrande = document.querySelector("#divgrande");
+        let altoDivGrande = getComputedStyle(divGrande).height.slice(0, -2);
+        altoDivGrande = Number(altoDivGrande);
+        let anchoDivGrande = getComputedStyle(divGrande).width.slice(0, -2);
+        anchoDivGrande = Number(anchoDivGrande);
+
+        for(i = 1; i <= 2; i++){
+            let textArea = document.createElement("textarea");
+            textArea.classList.add("contador");
+            textArea.id = ("contador" + i);
+            document.querySelector("#divgrande").append(textArea);  
+        }
+        let resultado = 0;
+
+
+        let arrayCoordenadasObjetos = [];
+        movimiento();
+        crearCobayos(cantidadCobayos,anchoDivGrande,altoDivGrande,arrayCoordenadasObjetos);
+
+        function nuevoSwitch(tecla){
+                
+                switch(tecla){
+                case 37:
+                    if(izq > 0){
+                        izq = izq - 10;
+                        divPequeno.style.left = izq + "px";
+                        comerCobayos(izq, techo, arrayCoordenadasObjetos);
+                    }
+                    //console.log("izquierda");
+                    break;
+                case 38:
+                    if(techo > 0){
+                        techo = techo - 10;
+                        divPequeno.style.top = techo + "px";
+                        comerCobayos(izq, techo, arrayCoordenadasObjetos);
+                    }
+                    //console.log("arriba");
+                    break;
+                case 39:
+                    if(izq < (anchoDivGrande - 20)){
+                        izq = izq + 10;
+                        divPequeno.style.left = izq + "px";
+                        comerCobayos(izq, techo, arrayCoordenadasObjetos);
+                    }
+                    //console.log("derecha");
+                    break;
+                case 40:
+                    if(techo < (altoDivGrande - 25)){
+                        techo = techo + 10;
+                        divPequeno.style.top = techo + "px";
+                        comerCobayos(izq, techo, arrayCoordenadasObjetos);
+                    }
+                    //console.log("abajo");
+                    break;
+                default:
+                    break;
+                }
+        }
+        
+        function crearCobayos(cantidadCobayos,anchoDivGrande,altoDivGrande,arrayCoordenadasObjetos){
+
+            let repetido = false;
+
+            for(let i = 1; i <= cantidadCobayos; i++){
+                repetido = false;
+                let ancho = crearNumRandom(anchoDivGrande - 25);
+                let largo = crearNumRandom(altoDivGrande - 25);
+
+                for (let elemento of arrayCoordenadasObjetos) {
+                    if((elemento.ancho == ancho) && (elemento.largo == largo)){
+                        repetido = true;
+                        i--;
+                    }
+                }
+
+                if(repetido == false){
+                    coordenadasCobayos = {
+                        ancho: ancho,
+                        largo: largo
+                        };
+                    arrayCoordenadasObjetos.push(coordenadasCobayos);
+
+                    let divCobayos = document.createElement("div");
+                    divCobayos.id = i;
+                    divCobayos.classList.add("divcobayos");
+                    divCobayos.style.left = ancho + "px";
+                    divCobayos.style.top = largo + "px";
+                    divGrande.append(divCobayos);   
+                }    
+            }
+        }
+        
+        function crearNumRandom(entrada){
+            let aleatorio = Math.floor(Math.random() * entrada);
+            if(aleatorio < 50){
+                return 50;
+            }
+            aleatorio = aleatorio - (aleatorio % 50);
+            return aleatorio;   
+        }
+
+        function comerCobayos(izq,techo,arrayCoordenadasObjetos){
+            if(cantidadCobayos == 0){
+                stopIntervals(crono1);
+                alert("GAME OVER \n Puntaje: " + resultado + "\n Tiempo: " + minutos + " minutos, con " + segundos + " segundos y " + milisegundos + " milisegundos");
+            }
+            for (let i = 0; i < arrayCoordenadasObjetos.length; i++) {
+            let element = arrayCoordenadasObjetos[i];
+                if ((element.ancho == izq) && (element.largo == techo)) {
+                    //console.log("borro");
+
+                    let divId = i + 1;
+                    let div = document.getElementById(divId);
+                    //console.log(div);
+
+                    if(div){
+                        div.remove();
+                        sonidoComer();
+                    }
+                    
+                    contadorPuntos();
+                    //console.log("puntos");
+
+                    cantidadCobayos--;
+                    //console.log(cantidadCobayos);
+                }     
+            }  
+        }
+
+        function contadorPuntos(){
+            resultado = resultado + 10;
+            document.getElementById("contador1").textContent = resultado;    
+        }
+
+        let milisegundos = 0;
+        let segundos = 0;
+        let minutos = 0;
+        function cronometro(){
+            milisegundos = milisegundos + 1;
+            if(milisegundos % 10 == 0){   
+                milisegundos = 0;
+                segundos = segundos + 1;
+            }
+            if(segundos == 60){
+                segundos = 0;
+                minutos = minutos + 1;
+            }
+            document.getElementById("contador2").textContent = minutos + " : " + segundos + " : " + milisegundos;
+            if(segundos %2 == 0){
+                cronoImagenFondo();
+            }	
+        }
+
+        let sube = true;
+        function cronoImagenFondo(){
+		let opacidad = document.querySelector("#imagenfondo");
+		let opa = Number(getComputedStyle(document.querySelector("#imagenfondo")).opacity);
+            if(opa >= 1){
+               sube = false; 
+            }
+            else if(opa <= 0){
+                sube = true; 
+            } 
+            if(sube){
+                opa += 0.05;
+            }else{
+                opa -= 0.05;
+            }
+            opacidad.style.opacity = opa.toString();
+        }
+        
+
+        function stopIntervals(valor){
+            clearInterval(valor);
+        }
+    </script>
+    
+</body>
+</html>

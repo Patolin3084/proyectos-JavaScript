@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bucle for</title>
+    <script>
+        /* generar una lista con todos los numeros consecutivos desde 0(cero) hasta el numero ingresado. */
+         function ej1(){
+        let numerointro;
+        let guardado = "";
+        numerointro = prompt("Ingrese un numero: ");
+         for(a = 0;a <= numerointro; a++){
+            guardado = (guardado + a + " ");
+        }
+        document.write(guardado);
+        }
+        //ej1();
+
+        /* generar una lista con todos los numeros consecutivos desde el numero ingresado hasta el 0(cero). */
+        function ej2(){
+        let numerointro;
+        let guardado = "";
+        numerointro = prompt("Ingrese un numero: ");
+         for(a = numerointro; a >= 0; a--){
+            guardado = (guardado + a + " ");
+        }
+        document.write(guardado);
+        }
+        //ej2();
+
+        /* generar una lista con todos los numeros pares positivos por debajo del numero ingresado por teclado */
+       function ej3(){
+        let numerointro;
+        let guardado = "";
+        numerointro = prompt("Ingrese un numero: ");
+         for(a = numerointro;a >= 0; a--){
+            if(a%2==0){
+                guardado = (guardado + a + " ");
+            } 
+        }
+        document.write(guardado);
+        }
+        //ej3();
+
+        /* Hacer un scrip que escriba la tabla de multiplicar del numero ingresado */
+        function ej4(){
+            let numerointro;
+            numerointro = prompt("Ingrese un numero: ");
+            for(a = 1; a <= 10; a++){
+                document.write(a + " x " + numerointro + " = " + (a * numerointro));
+                document.write("<p></p>");
+            }
+        }
+        //ej4();
+
+        /* Mostrar los numeros menores del numero introducido que al dividir entre 3 su resto sea 2. */
+
+        function ej5(){
+            let numerointro;
+            let guardado = "";
+            numerointro = prompt("Ingrese un numero: ");
+            for(a = numerointro;a >= 0; a--){
+                if(a%3 == 2){
+                    guardado = (guardado + a + " ");
+                } 
+            }
+            document.write(guardado);
+        }
+        //ej5();
+
+        /* Introducir una letra y un numero, mostrar por pantalla la letra tantas veces como diga el numero. */
+
+        function ej6(){
+            let numerointro;
+            let letraintro;
+            numerointro = prompt("Ingrese un numero: ");
+            letraintro = prompt("Ingrese una letra: ");
+                for(a = 1; a <= numerointro; a++){
+                    document.write(letraintro + " ");
+                }
+            
+        }
+        //ej6();
+
+        /* Un contador de 2 digitos, el de la derecha aumenta hasta 4 y aumenta 1 el contador de la izquieda. */ 
+
+        function ej7(){
+            let unidades;
+            let decenas;
+            for(decenas = 0; decenas <= 4; decenas++){
+                for(unidades = 0; unidades <= 4; unidades++){ 
+                    document.write(decenas + "" + unidades);
+                    document.write("<p></p>");
+                }
+            }
+        }
+        //ej7();
+
+        /* Calcular la suma desde 0 hasta el numero introducido. */
+
+        function ej8()
+        {
+            let numerointro;
+            let resultado = 0;
+            numerointro = prompt("Ingrese un numero: ");
+            for(i = 1; i <= numerointro; i++)
+                {
+                resultado= (i + resultado);
+                }
+            document.write(resultado);
+        }
+
+        ej8();
+
+        /* Calcular la media de 3 numeros que se pidan. */
+
+        function ej9()
+        {
+            let numerointro;
+            let resultado = 0;
+            for(i=0; i<3; i++)
+                {
+                    numerointro = prompt("Ingrese un numero: ");
+                    numerointro = Number(numerointro);
+                    resultado = (numerointro + resultado);
+                }
+                resultado = (resultado / 3);
+                document.write(resultado);
+        }
+        //ej9();
+
+        
+
+
+        
+
+
+        /* let hola="h";
+        console.log(hola);
+        hola = (hola + "o");
+        console.log(hola);
+        hola = (hola + "la ");
+        console.log(hola);
+        hola = (hola + "marcos " + hola);
+        console.log(hola); */
+
+
+        
+
+
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
